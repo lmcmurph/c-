@@ -1,0 +1,63 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace Chap10WPFF
+{
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+
+        private void ComputeCost(object sender, RoutedEventArgs e)
+        {
+            decimal cost = 0;
+
+            if (this.chkSwim.IsChecked == true)
+            {
+                cost += 25;
+            }
+            if (this.chkSnorkel.IsChecked == true)
+            {
+                cost += 40;
+            }
+            if (this.chkDive.IsChecked == true)
+            {
+                cost += 75;
+            }
+            if (this.rdoBeg.IsChecked == true)
+            {
+                cost += 10;
+                this.lblMsg.Content = "Beginner -- Extra " + "Charge $10";
+            }
+
+            else
+                if (this.rdoAdv.IsChecked == true)
+            {
+                cost -= 15;
+                this.lblMsg.Content = "Advanced - - Discount $15";
+            }
+            else
+            {
+                this.lblMsg.Content = "";
+            }
+            totaltxtbx.Text = cost.ToString("C");
+        }
+    }
+}
