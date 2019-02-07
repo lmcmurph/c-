@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+namespace Chapter6labpar1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string inValue = "";
+            int result;
+            int valid = 0;
+            int invalid = 0;
+
+            WriteLine("Enter an integer value between 1 and 99( type leave to exit)");
+            inValue = ReadLine(); 
+
+
+            while(inValue != "exit")
+            {
+                if (int.TryParse(inValue, out result)== false)
+                {
+                    WriteLine("You need to input an integer.  ");
+                    return;
+                }
+                if (result >= 1 && result <=99)
+                {
+                    valid += 1;
+                    WriteLine("Enter an integer value ( type leave to exit)");
+                    inValue = ReadLine();
+                
+                }
+                else
+                {
+                    invalid += 1;
+                    WriteLine("Enter an integer value ( type leave to exit)");
+                    inValue = ReadLine();
+                }
+            }
+            WriteLine("The number of valid numbers is " + valid);
+            WriteLine("The number of invalid numbers is " + invalid);
+            ReadKey();
+        }
+    }
+}
