@@ -1,0 +1,79 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console; 
+namespace RomanNumeral
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+          int number;
+        string inValue;
+        string RomanNumeral;
+
+        WriteLine("Determine the Roman Numeral of  number");
+
+         WriteLine("Enter a number between 1 and 10");
+         inValue = ReadLine();
+
+         if (int.TryParse(inValue, out number) == false)
+         {
+             WriteLine("You need to input an integer. ");
+             return;
+             switch (number)
+             {
+                 Case 1:
+                 romanNumeral = "I";
+                 break;
+                 Case 2:
+                 romanNumeral = "I(";
+                 break;
+                 Case 3:
+                 romanNumeral = "III";
+                 break;
+                 Case 4:
+                 romanNumeral = "VI";
+                 break;
+                 Case 5:
+                 romanNumeral = "V";
+                 break;
+                 Case 6:
+                 romanNumeral = "VI";
+                 break;
+                 Case 7:
+                 romanNumeral = "VII";
+                 break;
+                 Case 8:
+                 romanNumeral = "VIII";
+                 break;
+                 Case 9:
+                 romanNumeral = "IX";
+                 break;
+                 Case 10:
+                 romanNumeral = "I";
+                 break;
+                 default:
+                 romanNumeral = "Pick a number between 1 and 10"; 
+
+                 WriteLine("");
+                  ReadKey();
+
+             }
+         }
+
+
+
+            
+            
+           
+
+            
+         
+
+            ReadKey();
+        }
+    }
+}
